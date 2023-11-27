@@ -144,6 +144,6 @@ class __TwigTemplate_b75897d2f217b76ffe87e7dc73e466e2 extends Template
         {% endfor %}
     </tbody>
 </table>
-", "@WebProfiler/Profiler/bag.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/bag.html.twig");
+", "@WebProfiler/Profiler/bag.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/bag.html.twig");
     }
 }

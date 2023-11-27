@@ -459,6 +459,6 @@ class __TwigTemplate_6967f22e200f8eadecb7735c9a88701a extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

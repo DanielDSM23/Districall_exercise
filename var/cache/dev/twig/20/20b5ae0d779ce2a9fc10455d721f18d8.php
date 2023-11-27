@@ -45,31 +45,74 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
         // line 1
         echo "<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <title>";
+        // line 6
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        ";
-        // line 8
-        echo "        ";
+
+    <!-- Bootstrap CSS -->
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\">
+
+    <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+
+    ";
+        // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 11
-        echo "
-        ";
-        // line 12
-        $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
-        echo "    </head>
-    <body>
-        ";
         // line 17
-        $this->displayBlock('body', $context, $blocks);
+        echo "
+    ";
         // line 18
-        echo "    </body>
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 22
+        echo "</head>
+<body class=\"bg-light\">
+
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container-fluid\">
+        <a class=\"navbar-brand\" href=\"";
+        // line 27
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
+        echo "\">Blog</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+
+
+        <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 36
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_send");
+        echo "\">Poster</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 39
+        echo (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) ? ($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout")) : ($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login")));
+        echo "\">";
+        echo (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) ? ("Se deconnecter") : ("Se connecter"));
+        echo "</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class=\"container mt-4\">
+    ";
+        // line 46
+        $this->displayBlock('body', $context, $blocks);
+        // line 47
+        echo "</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+
+</body>
 </html>
 ";
         
@@ -80,7 +123,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 5
+    // line 6
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -99,7 +142,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 8
+    // line 13
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -109,11 +152,13 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 9
-        echo "            ";
+        // line 14
+        echo "        ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
         ";
+        // line 16
+        echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -122,7 +167,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 12
+    // line 18
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -132,11 +177,13 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
-        echo "            ";
+        // line 19
+        echo "        ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
         ";
+        // line 21
+        echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -145,7 +192,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 17
+    // line 46
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -174,32 +221,74 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
     /**
      * @codeCoverageIgnore
      */
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
     public function getDebugInfo()
     {
-        return array (  149 => 17,  136 => 13,  126 => 12,  113 => 9,  103 => 8,  84 => 5,  72 => 18,  70 => 17,  66 => 15,  64 => 12,  61 => 11,  58 => 8,  53 => 5,  47 => 1,);
+        return array (  196 => 46,  186 => 21,  181 => 19,  171 => 18,  161 => 16,  156 => 14,  146 => 13,  127 => 6,  110 => 47,  108 => 46,  96 => 39,  90 => 36,  78 => 27,  71 => 22,  69 => 18,  66 => 17,  64 => 13,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang=\"en\">
+<head>
+    <meta charset=\"UTF-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!-- Bootstrap CSS -->
+    <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css\">
+
+    <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+        {# Add your custom styles here if needed #}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+        {# Add your custom scripts here if needed #}
+    {% endblock %}
+</head>
+<body class=\"bg-light\">
+
+<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+    <div class=\"container-fluid\">
+        <a class=\"navbar-brand\" href=\"{{path('app_index')}}\">Blog</a>
+        <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+            <span class=\"navbar-toggler-icon\"></span>
+        </button>
+
+
+        <div class=\"collapse navbar-collapse justify-content-end\" id=\"navbarNav\">
+            <ul class=\"navbar-nav ml-auto\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{path(\"app_send\")}}\">Poster</a>
+                </li>
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ is_granted('ROLE_USER') ?  path('app_logout') : path('app_login') }}\">{{ is_granted('IS_AUTHENTICATED_FULLY') ?  \"Se deconnecter\" : \"Se connecter\" }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class=\"container mt-4\">
+    {% block body %}{% endblock %}
+</div>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+
+</body>
 </html>
-", "base.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/templates/base.html.twig");
+", "base.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/templates/base.html.twig");
     }
 }

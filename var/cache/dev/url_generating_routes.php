@@ -19,5 +19,7 @@ return [
     'app_index' => [[], ['_controller' => 'App\\Controller\\IndexController::index'], [], [['text', '/']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\LoginController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\LoginController::logout'], [], [['text', '/logout']], [], [], []],
+    'app_rate' => [['id'], ['_controller' => 'App\\Controller\\RateController::index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/rate']], [], [], []],
     'app_register' => [[], ['_controller' => 'App\\Controller\\RegistrationController::register'], [], [['text', '/register']], [], [], []],
+    'app_send' => [[], ['_controller' => 'App\\Controller\\SendPostController::index'], [], [['text', '/add']], [], [], []],
 ];

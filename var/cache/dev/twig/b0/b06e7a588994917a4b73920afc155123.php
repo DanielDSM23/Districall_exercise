@@ -85,7 +85,7 @@ class __TwigTemplate_c7e6db1a2ae340a34d28908154fb94a3 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Register</h1>
+        echo "    <h1>Créer un compte</h1>
 
     ";
         // line 8
@@ -118,7 +118,7 @@ class __TwigTemplate_c7e6db1a2ae340a34d28908154fb94a3 extends Template
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 17, $this->source); })()), "agreeTerms", [], "any", false, false, false, 17), 'row');
         echo "
 
-        <button type=\"submit\" class=\"btn\">Register</button>
+        <button type=\"submit\" class=\"btn\">Créer un compte</button>
     ";
         // line 20
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 20, $this->source); })()), 'form_end');
@@ -163,7 +163,7 @@ class __TwigTemplate_c7e6db1a2ae340a34d28908154fb94a3 extends Template
 {% block title %}Register{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>Créer un compte</h1>
 
     {{ form_errors(registrationForm) }}
 
@@ -176,9 +176,9 @@ class __TwigTemplate_c7e6db1a2ae340a34d28908154fb94a3 extends Template
         {{ form_row(registrationForm.age) }}
         {{ form_row(registrationForm.agreeTerms) }}
 
-        <button type=\"submit\" class=\"btn\">Register</button>
+        <button type=\"submit\" class=\"btn\">Créer un compte</button>
     {{ form_end(registrationForm) }}
 {% endblock %}
-", "registration/register.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/templates/registration/register.html.twig");
+", "registration/register.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/templates/registration/register.html.twig");
     }
 }

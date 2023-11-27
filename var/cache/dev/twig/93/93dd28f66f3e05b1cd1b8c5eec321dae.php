@@ -1837,6 +1837,6 @@ class __TwigTemplate_dacd0b4488847bb8ad00b181e727c170 extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

@@ -1891,6 +1891,6 @@ if (typeof Sfjs === 'undefined' || typeof Sfjs.loadToolbar === 'undefined') {
     });
 }
 /*]]>*/</script>
-", "@WebProfiler/Profiler/base_js.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
+", "@WebProfiler/Profiler/base_js.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base_js.html.twig");
     }
 }

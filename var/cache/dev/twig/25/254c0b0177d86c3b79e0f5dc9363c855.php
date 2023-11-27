@@ -113,13 +113,13 @@ class __TwigTemplate_b634659739fbc1fa91a017b8d15f0e3d extends Template
         }
         // line 16
         echo "
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
+    <h1 class=\"h3 mb-3 font-weight-normal\">Connectez-vous !</h1>
+    <label for=\"inputEmail\">Adresse e-mail</label>
     <input type=\"email\" value=\"";
         // line 19
         echo twig_escape_filter($this->env, (isset($context["last_username"]) || array_key_exists("last_username", $context) ? $context["last_username"] : (function () { throw new RuntimeError('Variable "last_username" does not exist.', 19, $this->source); })()), "html", null, true);
         echo "\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
+    <label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
@@ -128,10 +128,17 @@ class __TwigTemplate_b634659739fbc1fa91a017b8d15f0e3d extends Template
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\"
     >
-
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
-    </button>
+    <div class=\"container text-center mt-5\">
+        <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            Se connecter
+        </button>
+        <br>
+        <br>
+        <a href=\"";
+        // line 32
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">Vous ne possédez pas encore de compte ? Créez-en un dès maintenant.</a>
+    </div>
 </form>
 ";
         
@@ -163,7 +170,7 @@ class __TwigTemplate_b634659739fbc1fa91a017b8d15f0e3d extends Template
      */
     public function getDebugInfo()
     {
-        return array (  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 32,  128 => 24,  120 => 19,  115 => 16,  107 => 13,  104 => 12,  102 => 11,  99 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -184,21 +191,25 @@ class __TwigTemplate_b634659739fbc1fa91a017b8d15f0e3d extends Template
         </div>
     {% endif %}
 
-    <h1 class=\"h3 mb-3 font-weight-normal\">Please sign in</h1>
-    <label for=\"inputEmail\">Email</label>
+    <h1 class=\"h3 mb-3 font-weight-normal\">Connectez-vous !</h1>
+    <label for=\"inputEmail\">Adresse e-mail</label>
     <input type=\"email\" value=\"{{ last_username }}\" name=\"email\" id=\"inputEmail\" class=\"form-control\" autocomplete=\"email\" required autofocus>
-    <label for=\"inputPassword\">Password</label>
+    <label for=\"inputPassword\">Mot de passe</label>
     <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control\" autocomplete=\"current-password\" required>
 
     <input type=\"hidden\" name=\"_csrf_token\"
            value=\"{{ csrf_token('authenticate') }}\"
     >
-
-    <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
-    </button>
+    <div class=\"container text-center mt-5\">
+        <button class=\"btn btn-lg btn-primary\" type=\"submit\">
+            Se connecter
+        </button>
+        <br>
+        <br>
+        <a href=\"{{ path('app_register') }}\">Vous ne possédez pas encore de compte ? Créez-en un dès maintenant.</a>
+    </div>
 </form>
 {% endblock %}
-", "security/login.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/templates/security/login.html.twig");
+", "security/login.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/templates/security/login.html.twig");
     }
 }

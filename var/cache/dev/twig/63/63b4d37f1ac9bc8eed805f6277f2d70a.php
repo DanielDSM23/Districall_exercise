@@ -453,6 +453,6 @@ class __TwigTemplate_a6839e5843ffcad279fbb3b1c86afa06 extends Template
     });
 })();
 </script>
-", "@WebProfiler/Profiler/settings.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig");
+", "@WebProfiler/Profiler/settings.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/settings.html.twig");
     }
 }

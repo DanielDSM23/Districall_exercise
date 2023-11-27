@@ -305,6 +305,6 @@ class __TwigTemplate_de619b3e659e7426f909029927ee0f28 extends Template
         {{- form_rest(form) -}}
     </table>
 {%- endblock form_widget_compound -%}
-", "form_table_layout.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
+", "form_table_layout.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/twig-bridge/Resources/views/Form/form_table_layout.html.twig");
     }
 }

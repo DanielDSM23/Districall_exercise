@@ -106,6 +106,6 @@ class __TwigTemplate_3eba11a56de7cb0439080f1808fc3315 extends Template
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/header.html.twig");
     }
 }

@@ -65,7 +65,7 @@ class __TwigTemplate_f27d7161da59c92aad1e312d3ec97e17 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Hello IndexController!";
+        echo "Blog";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -85,58 +85,107 @@ class __TwigTemplate_f27d7161da59c92aad1e312d3ec97e17 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        if ((twig_length_filter($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 6, $this->source); })())) == 0)) {
-            // line 7
-            echo "    <h1>pas de post pour l'instant</h1>
-";
-        }
-        // line 9
-        if ((twig_length_filter($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 9, $this->source); })())) > 0)) {
-            // line 10
+        echo "  ";
+        // line 7
+        echo "
+  ";
+        // line 8
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [], "any", false, false, false, 8));
+        foreach ($context['_seq'] as $context["flashType"] => $context["flashMessages"]) {
+            // line 9
             echo "    ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 10, $this->source); })()));
-            foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            $context['_seq'] = twig_ensure_traversable($context["flashMessages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["flashMessage"]) {
+                // line 10
+                echo "      <div class=\"alert alert-";
+                echo twig_escape_filter($this->env, $context["flashType"], "html", null, true);
+                echo " alert-dismissible fade show\" role=\"alert\">
+        ";
                 // line 11
-                echo "        <div class=\"post\">
-            <h1>";
-                // line 12
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "name", [], "any", false, false, false, 12), "html", null, true);
-                echo "</h1>
-            <p class=\"created-at\">Publié le ";
-                // line 13
-                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 13), "j F Y"), "html", null, true);
+                echo twig_escape_filter($this->env, $context["flashMessage"], "html", null, true);
+                echo "
+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+      </div>
+    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flashMessage'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 15
+            echo "  ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['flashType'], $context['flashMessages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 16
+        echo "
+  ";
+        // line 17
+        if ((twig_length_filter($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 17, $this->source); })())) == 0)) {
+            // line 18
+            echo "    <h1 class=\"text-center mt-5\">Pas de post pour l'instant</h1>
+  ";
+        }
+        // line 20
+        echo "
+  ";
+        // line 21
+        if ((twig_length_filter($this->env, (isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 21, $this->source); })())) > 0)) {
+            // line 22
+            echo "    <div class=\"container mt-5\">
+      ";
+            // line 23
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 23, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+                // line 24
+                echo "        <div class=\"card mb-4\">
+          <div class=\"card-header\">
+            <h2>";
+                // line 26
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "name", [], "any", false, false, false, 26), "html", null, true);
+                echo "</h2>
+            <p class=\"text-muted\">Publié le ";
+                // line 27
+                echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "createdAt", [], "any", false, false, false, 27), "j F Y à H:m:s"), "html", null, true);
                 echo "</p>
-            
+          </div>
+          <div class=\"card-body\">
             ";
-                // line 15
-                if (twig_get_attribute($this->env, $this->source, $context["post"], "image", [], "any", false, false, false, 15)) {
-                    // line 16
-                    echo "                <img src=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "image", [], "any", false, false, false, 16))), "html", null, true);
-                    echo "\" alt=\"Image de la publication\">
+                // line 30
+                if (twig_get_attribute($this->env, $this->source, $context["post"], "image", [], "any", false, false, false, 30)) {
+                    // line 31
+                    echo "              <img src=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/images/" . twig_get_attribute($this->env, $this->source, $context["post"], "image", [], "any", false, false, false, 31))), "html", null, true);
+                    echo "\" class=\"img-fluid mb-3\" alt=\"Image de la publication\">
             ";
                 }
-                // line 18
-                echo "            
-            <p class=\"description\">";
-                // line 19
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 19), "html", null, true);
+                // line 33
+                echo "            <p class=\"card-text\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 33), "html", null, true);
                 echo "</p>
-            <div class=\"content\">";
-                // line 20
-                echo twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 20);
+            <div class=\"card-text\">";
+                // line 34
+                echo twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 34);
                 echo "</div>
-            <a href=\"\">noter ce post</a>
-            <p>------------------</p>
+            <a href=\"";
+                // line 35
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_rate", ["id" => twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+                echo "\" class=\"btn btn-primary\">Noter ce poste</a>
+          </div>
         </div>
-    ";
+      ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 39
+            echo "    </div>
+  ";
         }
-        // line 26
+        // line 41
         echo "
 ";
         
@@ -168,38 +217,53 @@ class __TwigTemplate_f27d7161da59c92aad1e312d3ec97e17 extends Template
      */
     public function getDebugInfo()
     {
-        return array (  140 => 26,  128 => 20,  124 => 19,  121 => 18,  115 => 16,  113 => 15,  108 => 13,  104 => 12,  101 => 11,  96 => 10,  94 => 9,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  189 => 41,  185 => 39,  175 => 35,  171 => 34,  166 => 33,  160 => 31,  158 => 30,  152 => 27,  148 => 26,  144 => 24,  140 => 23,  137 => 22,  135 => 21,  132 => 20,  128 => 18,  126 => 17,  123 => 16,  117 => 15,  107 => 11,  102 => 10,  97 => 9,  93 => 8,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
-{% if posts|length == 0%}
-    <h1>pas de post pour l'instant</h1>
-{%endif%}
-{% if posts|length > 0%}
-    {% for post in posts%}
-        <div class=\"post\">
-            <h1>{{ post.name }}</h1>
-            <p class=\"created-at\">Publié le {{ post.createdAt|date(\"j F Y\") }}</p>
-            
-            {% if post.image %}
-                <img src=\"{{ asset('uploads/' ~ post.image) }}\" alt=\"Image de la publication\">
-            {% endif %}
-            
-            <p class=\"description\">{{ post.description }}</p>
-            <div class=\"content\">{{ post.content|raw }}</div>
-            <a href=\"\">noter ce post</a>
-            <p>------------------</p>
-        </div>
+  {#<p>is logged: {{ is_granted('ROLE_USER') }} </p>#}
+
+  {% for flashType, flashMessages in app.flashes %}
+    {% for flashMessage in flashMessages %}
+      <div class=\"alert alert-{{ flashType }} alert-dismissible fade show\" role=\"alert\">
+        {{ flashMessage }}
+        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+      </div>
     {% endfor %}
-{%endif%}
+  {% endfor %}
+
+  {% if posts|length == 0 %}
+    <h1 class=\"text-center mt-5\">Pas de post pour l'instant</h1>
+  {% endif %}
+
+  {% if posts|length > 0 %}
+    <div class=\"container mt-5\">
+      {% for post in posts %}
+        <div class=\"card mb-4\">
+          <div class=\"card-header\">
+            <h2>{{ post.name }}</h2>
+            <p class=\"text-muted\">Publié le {{ post.createdAt|date(\"j F Y à H:m:s\") }}</p>
+          </div>
+          <div class=\"card-body\">
+            {% if post.image %}
+              <img src=\"{{ asset('uploads/images/' ~ post.image) }}\" class=\"img-fluid mb-3\" alt=\"Image de la publication\">
+            {% endif %}
+            <p class=\"card-text\">{{ post.description }}</p>
+            <div class=\"card-text\">{{ post.content|raw }}</div>
+            <a href=\"{{ path(\"app_rate\", {id : post.id}) }}\" class=\"btn btn-primary\">Noter ce poste</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 
 {% endblock %}
-", "index/index.html.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/templates/index/index.html.twig");
+", "index/index.html.twig", "/Users/daniel/Documents/GitHub/districall_exercise/templates/index/index.html.twig");
     }
 }

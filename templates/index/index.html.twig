@@ -1,27 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello IndexController!{% endblock %}
+{% block title %}Blog{% endblock %}
 
 {% block body %}
-{% if posts|length == 0%}
-    <h1>pas de post pour l'instant</h1>
-{%endif%}
-{% if posts|length > 0%}
-    {% for post in posts%}
-        <div class="post">
-            <h1>{{ post.name }}</h1>
-            <p class="created-at">Publié le {{ post.createdAt|date("j F Y") }}</p>
-            
-            {% if post.image %}
-                <img src="{{ asset('uploads/' ~ post.image) }}" alt="Image de la publication">
-            {% endif %}
-            
-            <p class="description">{{ post.description }}</p>
-            <div class="content">{{ post.content|raw }}</div>
-            <a href="">noter ce post</a>
-            <p>------------------</p>
-        </div>
+  {#<p>is logged: {{ is_granted('ROLE_USER') }} </p>#}
+
+  {% for flashType, flashMessages in app.flashes %}
+    {% for flashMessage in flashMessages %}
+      <div class="alert alert-{{ flashType }} alert-dismissible fade show" role="alert">
+        {{ flashMessage }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
     {% endfor %}
-{%endif%}
+  {% endfor %}
+
+  {% if posts|length == 0 %}
+    <h1 class="text-center mt-5">Pas de post pour l'instant</h1>
+  {% endif %}
+
+  {% if posts|length > 0 %}
+    <div class="container mt-5">
+      {% for post in posts %}
+        <div class="card mb-4">
+          <div class="card-header">
+            <h2>{{ post.name }}</h2>
+            <p class="text-muted">Publié le {{ post.createdAt|date("j F Y à H:m:s") }}</p>
+          </div>
+          <div class="card-body">
+            {% if post.image %}
+              <img src="{{ asset('uploads/images/' ~ post.image) }}" class="img-fluid mb-3" alt="Image de la publication">
+            {% endif %}
+            <p class="card-text">{{ post.description }}</p>
+            <div class="card-text">{{ post.content|raw }}</div>
+            <a href="{{ path("app_rate", {id : post.id}) }}" class="btn btn-primary">Noter ce poste</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
 
 {% endblock %}

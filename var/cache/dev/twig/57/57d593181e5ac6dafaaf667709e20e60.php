@@ -195,6 +195,6 @@ class __TwigTemplate_5802458c209b5605b8dcef4909017357 extends Template
 .timeline-graph .timeline-period {
     stroke-width: 0;
 }
-", "@WebProfiler/Collector/time.css.twig", "/Applications/MAMP/htdocs/symfony/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.css.twig");
+", "@WebProfiler/Collector/time.css.twig", "/Users/daniel/Documents/GitHub/districall_exercise/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.css.twig");
     }
 }
