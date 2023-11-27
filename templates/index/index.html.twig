@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+{% if posts|length == 0%}
+    <h1>pas de post pour l'instant</h1>
+{%endif%}
+{% if posts|length > 0%}
+    {% for post in posts%}
+        <div class="post">
+            <h1>{{ post.name }}</h1>
+            <p class="created-at">Publié le {{ post.createdAt|date("j F Y") }}</p>
+            
+            {% if post.image %}
+                <img src="{{ asset('uploads/' ~ post.image) }}" alt="Image de la publication">
+            {% endif %}
+            
+            <p class="description">{{ post.description }}</p>
+            <div class="content">{{ post.content|raw }}</div>
+            <a href="">noter ce post</a>
+            <p>------------------</p>
+        </div>
+    {% endfor %}
+{%endif%}
+
+{% endblock %}
