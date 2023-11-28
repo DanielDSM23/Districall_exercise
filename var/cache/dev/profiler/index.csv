@@ -43,3 +43,9 @@ e06335,::1,GET,http://localhost:8000/,1701180870,,200
 7f4919,::1,GET,http://localhost:8000/,1701180952,,200
 8e6380,::1,GET,http://localhost:8000/login,1701180953,,200
 c72fc8,::1,GET,http://localhost:8000/register,1701180954,,200
+290d0e,::1,POST,http://localhost:8000/register,1701181043,,200
+2ccaa3,::1,GET,http://localhost:8000/add,1701181060,,302
+7f85be,::1,GET,http://localhost:8000/login,1701181060,,200
+dd3548,::1,GET,http://localhost:8000/,1701181072,,200
+7cc4c0,::1,GET,http://localhost:8000/rate/12,1701181077,,302
+335a67,::1,GET,http://localhost:8000/login,1701181077,,200
