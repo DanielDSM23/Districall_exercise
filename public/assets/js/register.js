@@ -31,7 +31,7 @@ $(document).ready(function() {
             previousButton.removeAttr("style");
             nextButton.empty();
             nextButton.append("Créer un compte");
-            nextButton.addAttr("type", "submit");
+            nextButton.attr("type", "submit");
         }
     });
     previousButton.click(function() {
