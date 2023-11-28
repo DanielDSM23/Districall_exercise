@@ -4,18 +4,25 @@
 
 {% block body %}
     <h1>Créer un compte</h1>
-
     {{ form_errors(registrationForm) }}
 
     {{ form_start(registrationForm) }}
+        <div id="emailPassword">
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
+        </div>
+        <div id="ID" style="display:none;">
         {{ form_row(registrationForm.sex) }}
         {{ form_row(registrationForm.age) }}
         {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Créer un compte</button>
+        </div>
+        <p id="message" style="color:red; text-align:center;"></p>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary" id="previous" style="visibility:hidden;">Revenir en arrière</button>
+            <button type="button" class="btn btn-primary" id="next">Suivant</button>
+        </div>
     {{ form_end(registrationForm) }}
 {% endblock %}
+{% block javascriptFile %}{{ asset('assets/js/register.js') }}{% endblock %}

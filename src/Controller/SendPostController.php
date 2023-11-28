@@ -56,6 +56,7 @@ class SendPostController extends AbstractController
             }
             $managerDoctrine->persist($post);
             $managerDoctrine->flush();
+            $this->addFlash('success', 'Votre post a été publié');
             return $this->redirectToRoute("app_index");
         }
         return $this->renderForm('send_post/index.html.twig', [

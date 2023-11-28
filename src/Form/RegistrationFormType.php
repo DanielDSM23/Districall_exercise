@@ -7,6 +7,7 @@ use Doctrine\DBAL\Types\IntegerType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType as TypeIntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,8 +21,11 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email')
+            ->add('email', EmailType::class, [
+                'label' => 'Adresse e-mail'
+            ])
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'Accepter les termes d\'utilisation',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -45,8 +49,10 @@ class RegistrationFormType extends AbstractType
                         'max' => 4096,
                     ]),
                 ],
+                'label' => 'Mot de passe',
             ])
             ->add('sex', ChoiceType::class, [
+                'label' => 'Sexe',
                 'choices' => [
                     'Homme' => 0,
                     'Femme' => 1,
@@ -55,6 +61,7 @@ class RegistrationFormType extends AbstractType
             
             ->add('age', TypeIntegerType::class, [
                 'required' => false,
+                'label' => 'Âge',
             ])
         ;
     }

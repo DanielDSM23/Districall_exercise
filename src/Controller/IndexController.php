@@ -14,7 +14,7 @@ class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(ManagerRegistry $doctrine, Security $security): Response
     {
-        $posts = $doctrine->getRepository(Article::class)->findAll();
+        $posts = $doctrine->getRepository(Article::class)->findBy([], ['id' => 'DESC']);
         return $this->render('index/index.html.twig', [
            'posts' => $posts,
         ]);

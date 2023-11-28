@@ -31,6 +31,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
             'stylesheets' => [$this, 'block_stylesheets'],
             'javascripts' => [$this, 'block_javascripts'],
             'body' => [$this, 'block_body'],
+            'javascriptFile' => [$this, 'block_javascriptFile'],
         ];
     }
 
@@ -62,19 +63,19 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
     ";
         // line 13
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 16
         echo "
     ";
-        // line 18
+        // line 17
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 22
+        // line 20
         echo "</head>
 <body class=\"bg-light\">
 
 <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
     <div class=\"container-fluid\">
         <a class=\"navbar-brand\" href=\"";
-        // line 27
+        // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_index");
         echo "\">Blog</a>
         <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
@@ -86,13 +87,13 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
             <ul class=\"navbar-nav ml-auto\">
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 36
+        // line 34
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_send");
         echo "\">Poster</a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 39
+        // line 37
         echo (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) ? ($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout")) : ($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login")));
         echo "\">";
         echo (($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("IS_AUTHENTICATED_FULLY")) ? ("Se deconnecter") : ("Se connecter"));
@@ -104,13 +105,18 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 </nav>
 <div class=\"container mt-4\">
     ";
-        // line 46
+        // line 44
         $this->displayBlock('body', $context, $blocks);
-        // line 47
+        // line 45
         echo "</div>
 
 <!-- Bootstrap JS, Popper.js, and jQuery -->
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+<script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"></script>
+<script src=\"";
+        // line 50
+        $this->displayBlock('javascriptFile', $context, $blocks);
+        echo "\"></script>
 
 </body>
 </html>
@@ -156,9 +162,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
         echo "        ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_link_tags')->getCallable()("app"), "html", null, true);
         echo "
-        ";
-        // line 16
-        echo "    ";
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -167,7 +171,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 18
+    // line 17
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -177,13 +181,11 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 19
+        // line 18
         echo "        ";
         echo twig_escape_filter($this->env, $this->env->getFunction('encore_entry_script_tags')->getCallable()("app"), "html", null, true);
         echo "
-        ";
-        // line 21
-        echo "    ";
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -192,7 +194,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     }
 
-    // line 46
+    // line 44
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,6 +203,24 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+    }
+
+    // line 50
+    public function block_javascriptFile($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascriptFile"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascriptFile"));
 
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -231,7 +251,7 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  196 => 46,  186 => 21,  181 => 19,  171 => 18,  161 => 16,  156 => 14,  146 => 13,  127 => 6,  110 => 47,  108 => 46,  96 => 39,  90 => 36,  78 => 27,  71 => 22,  69 => 18,  66 => 17,  64 => 13,  54 => 6,  47 => 1,);
+        return array (  216 => 50,  198 => 44,  185 => 18,  175 => 17,  162 => 14,  152 => 13,  133 => 6,  118 => 50,  111 => 45,  109 => 44,  97 => 37,  91 => 34,  79 => 25,  72 => 20,  70 => 17,  67 => 16,  65 => 13,  55 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -250,12 +270,10 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
-        {# Add your custom styles here if needed #}
     {% endblock %}
 
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
-        {# Add your custom scripts here if needed #}
     {% endblock %}
 </head>
 <body class=\"bg-light\">
@@ -286,6 +304,8 @@ class __TwigTemplate_c7f90072f5d3c02d64ca5852f87a653f extends Template
 
 <!-- Bootstrap JS, Popper.js, and jQuery -->
 <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
+<script src=\"https://code.jquery.com/jquery-3.7.1.min.js\"></script>
+<script src=\"{% block javascriptFile %}{% endblock %}\"></script>
 
 </body>
 </html>
